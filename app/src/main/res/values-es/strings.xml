@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Flickr Photo Viewer</string>
+    <string name="text_loading_data">Cargando datos...</string>
+
+    <string name="dlg_order_by_photo_title">Ordenar por:</string>
+    <string name="dlg_order_by_photo_rbtn_date">Fecha</string>
+    <string name="dlg_order_by_photo_rbtn_name_file">Nombre de archivo</string>
+
+    <string name="dlg_list_actions_photo_title">Seleccionar una accion</string>
+    <string name="dlg_list_action_photo_browser">Abrir en navegador web</string>
+    <string name="dlg_list_action_photo_comment">Ver comentarios</string>
+    <string name="dlg_list_action_photo_email">Compartir por e-mail</string>
+
+    <string name="text_btn_cancel">Cancelar</string>
+    <string name="text_btn_laoding_more">Mostrar mas...</string>
+
+    <string name="menu_settings">Preferencias</string>
+    <string name="menu_order">Ordenar...</string>
+
+    <string name="text_comments">Comentarios:</string>
+    <string name="text_no_email_app">No se pudo encontrar una aplicacion de correo configurada.</string>
+
+    <string name="text_notification_no_update_directory_list">No se pudo actualizar la lista de albumes.</string>
+    <string name="text_notification_no_update_photo_list">No se pudo actualizar la lista de fotos.</string>
+
+    <string name="text_notification_updating_directory_list">Actualizando lista de albumes...</string>
+    <string name="text_notification_updating_photo_list">Actualizando lista de fotos...</string>
+
+    <string name="text_checkbox_full_screen">Ejecutar app a pantalla completa</string>
+    <string name="text_settings_title">Preferencias</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="title_about">Acerca de FlickrPhotoView</string>
+
+</resources>

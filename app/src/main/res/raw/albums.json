@@ -1,0 +1,27 @@
+{ "photosets": { "page": 1, "pages": 1, "perpage": 6, "total": 6,
+    "photoset": [{
+        "id": "72157673063872941",  "primary": "29818203866",
+        "secret": "30ec46b976", "server": "5346",
+        "farm": 6,  "photos": 31,
+        "videos": 0,
+        "title": {"_content": "Lugares del planeta tierra" },
+         "description": { "_content": "Fotos de paisajes." },
+         "needs_interstitial": 0, "visibility_can_see_set": 1,
+         "count_views": 0, "count_comments": 0, "can_comment": 0, "date_create": "1474550959", "date_update": "1474550973" },
+
+      { "id": "72157674129790766", "primary": "29560238880", "secret": "e891aef2e1", "server": "8456", "farm": 9, "photos": 23, "videos": 0,
+        "title": { "_content": "Pluto 2015" },
+        "description": { "_content": "Fotos del planeta pluto visto en ese año." }, "needs_interstitial": 0, "visibility_can_see_set": 1, "count_views": 0, "count_comments": 0, "can_comment": 0, "date_create": "1474549335", "date_update": "1474549392" },
+      { "id": "72157674114786816", "primary": "29846201475", "secret": "080501db6f", "server": "7748", "farm": 8, "photos": 14, "videos": 0,
+        "title": { "_content": "Fondos" },
+        "description": { "_content": "Fondos de escritorio." }, "needs_interstitial": 0, "visibility_can_see_set": 1, "count_views": 0, "count_comments": 0, "can_comment": 0, "date_create": "1474514685", "date_update": "1474514688" },
+      { "id": "72157674210087855", "primary": "28813955583", "secret": "ce7354f1ff", "server": "8065", "farm": 9, "photos": 1, "videos": 0,
+        "title": { "_content": "Mar 2012" },
+        "description": { "_content": "Mar azul." }, "needs_interstitial": 0, "visibility_can_see_set": 1, "count_views": 0, "count_comments": 0, "can_comment": 0, "date_create": "1474513840", "date_update": 0 },
+      { "id": "72157672995134990", "primary": "28813949603", "secret": "7c6a1a8361", "server": "8080", "farm": 9, "photos": 31, "videos": 0,
+        "title": { "_content": "Vacaciones 2010" },
+        "description": { "_content": "Fotos de las playas tomadas en las vacaciones del año 2009." }, "needs_interstitial": 0, "visibility_can_see_set": 1, "count_views": 0, "count_comments": 0, "can_comment": 0, "date_create": "1474513784", "date_update": "1474513788" },
+      { "id": "72157674210031065", "primary": "29435523235", "secret": "2584ba0ccb", "server": "8280", "farm": 9, "photos": 5, "videos": 0,
+        "title": { "_content": "Playas 2009" },
+        "description": { "_content": "Hermosas fotografias de playas tomadas en el año 2009." }, "needs_interstitial": 0, "visibility_can_see_set": 1, "count_views": 0, "count_comments": 0, "can_comment": 0, "date_create": "1474513708", "date_update": "1474513709" }
+    ] }, "stat": "ok" }

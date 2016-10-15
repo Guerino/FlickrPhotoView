@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+
+import java.util.regex.Pattern
+
+task('increaseVersionCode') << {
+    //println(":VersionCode Increment")
+    def manifestFile = file("src/main/AndroidManifest.xml")
+    def pattern = Pattern.compile("versionCode=\"(\\d+)\"")
+    def manifestText = manifestFile.getText()
+    def matcher = pattern.matcher(manifestText)
+    matcher.find()
+    def versionCode = Integer.parseInt(matcher.group(1))
+    def manifestContent = matcher.replaceAll("versionCode=\"" + ++versionCode + "\"")
+    manifestFile.write(manifestContent)
+}
+
+task('incrementVersionName') << {
+    //println(":VersionName Increment")
+    def manifestFile = file("src/main/AndroidManifest.xml")
+    def patternVersionNumber = Pattern.compile("versionName=\"(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)\"")
+    def manifestText = manifestFile.getText()
+    def matcherVersionNumber = patternVersionNumber.matcher(manifestText)
+    matcherVersionNumber.find()
+    def majorVersion = Integer.parseInt(matcherVersionNumber.group(1))
+    def minorVersion = Integer.parseInt(matcherVersionNumber.group(2))
+    def pointVersion = Integer.parseInt(matcherVersionNumber.group(3))
+    def buildVersion = Integer.parseInt(matcherVersionNumber.group(4))
+    def mNextVersionName = majorVersion + "." + minorVersion + "." + pointVersion + "." + (buildVersion + 1)
+    def manifestContent = matcherVersionNumber.replaceAll("versionName=\"" + mNextVersionName + "\"")
+    manifestFile.write(manifestContent)
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'generateReleaseBuildConfig' || task.name == 'generateDebugBuildConfig') {
+        task.dependsOn 'increaseVersionCode'
+        task.dependsOn 'incrementVersionName'
+    }
+}
+
+def getVersionNameTimestamp() {
+    return new Date().format('yy.MM.ddHHmm')
+}
+
+def getVersionCodeTimestamp() {
+    def date = new Date()
+    def formattedDate = date.format('yyMMddHHmm')
+    def code = formattedDate.toInteger()
+    println sprintf("VersionCode: %d", code)
+    return code
+}
+
+def getBuildVersionCode() {
+    def manifestFile = file("src/main/AndroidManifest.xml")
+    def patternVersionCode = Pattern.compile("versionCode=\"(\\d+)\"")
+    def manifestText = manifestFile.getText()
+    def matcherVersionCode = patternVersionCode.matcher(manifestText)
+    matcherVersionCode.find()
+    def mVersionCode = Integer.parseInt(matcherVersionCode.group(1))
+    return mVersionCode;
+}
+
+def getVersionName() {
+    def manifestFile = file("src/main/AndroidManifest.xml")
+    def patternVersionNumber = Pattern.compile("versionName=\"(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)\"")
+    def manifestText = manifestFile.getText()
+    def matcherVersionNumber = patternVersionNumber.matcher(manifestText)
+    matcherVersionNumber.find()
+    def majorVersion = Integer.parseInt(matcherVersionNumber.group(1))
+    def minorVersion = Integer.parseInt(matcherVersionNumber.group(2))
+    def pointVersion = Integer.parseInt(matcherVersionNumber.group(3))
+    def buildVersion = Integer.parseInt(matcherVersionNumber.group(4))
+    def strVersionName = majorVersion + "." + minorVersion + "." + pointVersion + "." + (buildVersion+1)
+    return strVersionName;
+}
+
+//def build = getBuildVersionCode()
+def version = getVersionName()
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.tdm.view.photo.flickr.flickrphotoview"
+        minSdkVersion 10
+        targetSdkVersion 23
+    }
+    buildTypes {
+        release {
+            shrinkResources false
+            minifyEnabled false
+            debuggable false
+           // runProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //Nombre del ejecutable apk
+            archivesBaseName = "FlickrPhotoView-v$version"
+        }
+    }
+    dexOptions {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+}

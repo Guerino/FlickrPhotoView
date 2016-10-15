@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="18dp"
+    android:id="@+id/item_relative_layout_comments">
+
+    <ImageView
+        android:id="@+id/img_user"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="6dip"
+        android:layout_width="72sp"
+        android:layout_height="72sp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:padding="3dp"/>
+
+    <TextView
+        android:id="@+id/lbl_user_name"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/img_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuario"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="16dip"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/lbl_comment_user"
+        android:layout_toRightOf="@id/img_user"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/lbl_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ellipsize="marquee"
+        android:inputType="textMultiLine"
+        android:text="Comentario"
+        android:typeface="sans"
+        android:textSize="14sp"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>

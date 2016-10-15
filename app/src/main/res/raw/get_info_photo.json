@@ -1,0 +1,24 @@
+{ "photo": { "id": "29818203866", "secret": "30ec46b976", "server": "5346", "farm": 6, "dateuploaded": "1474550942", "isfavorite": 0, "license": 0, "safety_level": 0,
+  "rotation": 0, "originalsecret": "ff1c928de8", "originalformat": "jpg",
+  "owner": { "nsid": "144947682@N05", "username": "Güerino", "realname": "Javier Palacios", "location": "", "iconserver": 0, "iconfarm": 0, "path_alias": "" },
+  "title": { "_content": "Vancouver Skyline" },
+  "description": { "_content": "Vancouver Skyline" },
+  "visibility": { "ispublic": 1, "isfriend": 0, "isfamily": 0 },
+  "dates": { "posted": "1474550942", "taken": "2016-09-22 06:09:57", "takengranularity": 0, "takenunknown": 1, "lastupdate": "1474550969" }, "views": 13,
+  "editability": { "cancomment": 0, "canaddmeta": 0 },
+  "publiceditability": { "cancomment": 1, "canaddmeta": 0 },
+  "usage": { "candownload": 1, "canblog": 0, "canprint": 0, "canshare": 1 },
+  "comments": { "_content": 0 },
+  "notes": {
+    "note": [
+
+    ] },
+  "people": { "haspeople": 0 },
+  "tags": {
+    "tag": [
+
+    ] },
+  "urls": {
+    "url": [
+      { "type": "photopage", "_content": "https:\/\/www.flickr.com\/photos\/144947682@N05\/29818203866\/" }
+    ] }, "media": "photo" }, "stat": "ok" }

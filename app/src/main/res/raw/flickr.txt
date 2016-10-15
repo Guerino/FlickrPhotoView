@@ -1,0 +1,104 @@
+FlickrPhotoView
+
+Clave:
+4d1712132822061a2ebc9a2964206f47
+
+Secreto:
+b8ba35e82f0d508a
+
+Has autorizado correctamente a la aplicación FlickrPhotoView para que
+use tus credenciales. Ahora escribe este código en la aplicación:
+723-239-717
+
+user_id=144947682%40N05
+o       144947682@N05
+
+Parcial: 14 de Octubre
+
+
+getListaAlbunes:
+https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=4ed87948b21e64b1cd4e7df2c7913009&user_id=144947682%40N05&format=json&nojsoncallback=1
+
+getFotos:
+https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=4ed87948b21e64b1cd4e7df2c7913009&photoset_id=72157673063872941&user_id=144947682%40N05&format=json&nojsoncallback=1
+
+getComentarioUnaFoto:
+https://api.flickr.com/services/rest/?method=flickr.photos.comments.getList&api_key=4ed87948b21e64b1cd4e7df2c7913009&photo_id=29818203866&format=json&nojsoncallback=1
+
+Url a una foto:
+https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+https://farm6.staticflickr.com/5346/29818203866_30ec46b976_s.jpg
+
+Direcciones URL de origen de fotos
+--------------------------------------------------------
+Puedes crear la URL de origen a una foto una vez que sepas su ID., el ID. del servidor, el ID. del conjunto de servidores y el secreto, según lo indicado por muchos métodos API.
+
+La URL toma el siguiente formato:
+
+https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+	or
+https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
+	or
+https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
+
+*Antes del 18 de noviembre de 2011, la API devolvía URL de imágenes con nombres de host como: "farm{farm-id}.static.flickr.com". Esas URL se siguen admitiendo.
+Sufijos de tamaño
+
+Los sufijos de letras son los siguientes:
+s	cuadrado pequeño 75x75
+q	large square 150x150
+t	imagen en miniatura, 100 en el lado más largo
+m	pequeño, 240 en el lado más largo
+n	small, 320 on longest side
+-	mediano, 500 en el lado más largo
+z	mediano 640, 640 en el lado más largo
+c	tamaño mediano 800, 800 en el lado más largo†
+b	grande, 1024 en el lado más largo*
+h	grande de 1600, 1600 del lado más largo†
+k	grande de 2048, 2048 del lado más largo†
+o	imagen original, ya sea jpg, gif o png, según el formato de origen
+
+* Antes del 25 de mayo de 2010, las fotos grandes sólo existían para imágenes originales muy grandes.
+
+† Las fotos medianas de 800, grandes de 1600 y grandes de 2048 solo están disponibles a partir del 1.º de marzo de 2012.
+
+Nota: Las fotos originales se comportan de una manera un poco diferente. Tienen su propio secreto (llamado originalsecret en las respuestas) y una extensión de archivo variable (llamada originalformat en las respuestas). Estos valores se obtienen a través de la API sólo cuando el que llama tiene permiso para ver el tamaño original (según la preferencia de un usuario y varios otros criterios). Estos valores se obtienen a través del método flickr.photos.getInfo y mediante cualquier método que devuelva una lista de fotos y dé un parámetro extras (con un valor de original_format), como flickr.photos.search. Como siempre, el método flickr.photos.getSizes devolverá la URL original completa cuando se tengan los permisos necesarios.
+Ejemplo
+
+https://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg
+
+farm-id: 1
+server-id: 2
+photo-id: 1418878
+secret: 1e92283336
+size: m
+
+Direcciones URL de páginas Web
+
+Las direcciones URL a páginas de fotos y perfiles usan el NSID del usuario (el número con el símbolo '@') o su URL personalizada (si es que eligieron una). Puedes encontrar su URL personalizada con una llamada a flickr.people.getInfo. La versión de NSID de la URL funcionará siempre, independientemente de si se configuró una URL 'linda', de modo que puedas evitar la llamada API simplemente al usar el ID. de usuario que devuelven la mayoría de las llamadas API de fotos.
+
+Luego, podrás crear fácilmente direcciones URL a perfiles, galería, fotos individuales o álbumes de fotos.
+
+https://www.flickr.com/people/{user-id}/ - profile
+https://www.flickr.com/photos/{user-id}/ - photostream
+https://www.flickr.com/photos/{user-id}/{photo-id} - individual photo
+https://www.flickr.com/photos/{user-id}/sets/ - all photosets
+https://www.flickr.com/photos/{user-id}/sets/{photoset-id} - single photoset
+
+Puedes crear otras direcciones URL de manera similar. Al dirigir a un usuario a https://www.flickr.com/photos/me/* o https://www.flickr.com/people/me/* se reemplazará el 'me' con su propio ID. de usuario, si ha iniciado sesión (de lo contrario, lo redirigirá a la última página de foto).
+Ejemplos
+
+https://www.flickr.com/photos/12037949754@N01/
+https://www.flickr.com/photos/12037949754@N01/155761353/
+https://www.flickr.com/photos/12037949754@N01/sets/
+https://www.flickr.com/photos/12037949754@N01/sets/72157594162136485/
+
+URL cortas
+
+Flickr provides a URL shortening service for uploaded photos (and videos). Short URLs can be useful in a variety of contexts including: email, on business cards, IM, text messages, or short status updates.
+
+Cada foto en Flickr tiene una URL corta calculada matemáticamente de la forma:
+
+https://flic.kr/p/{base58-photo-id}
+
+Base58 is used to compress the photo-ids using a mix of letters and numbers. You can find more info on base58, and code samples in the Flickr API Group.
